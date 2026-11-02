@@ -23,18 +23,67 @@ int main(int argv, char** argc){
     return 1;
   }
 
+  set<Card> alice;
+  set<Card> bob;
+
   //Read each file
   while (getline (cardFile1, line) && (line.length() > 0)){
-
+    alice.insert(Card(line));
   }
   cardFile1.close();
 
 
   while (getline (cardFile2, line) && (line.length() > 0)){
-
+    bob.insert(Card(line));
   }
   cardFile2.close();
   
+  // Game Loop
+  while(true)
+  {
+    bool aliceFound = false;
+    Card aliceMatch;
+    for(auto it = alice.begin(); it != alice.end(); ++it)
+    {
+      if(bob.find(*it) != bob.end())
+      {
+        aliceMatch = *it;
+        aliceFound = true;
+        break;
+      }
+    }
+
+    if(!aliceFound){break;}
+
+    cout << "Alice picked matching card " << aliceMatch << endl;
+    alice.erase(aliceMatch);
+    bob.erase(aliceMatch);
+
+    bool bobFound = false;
+    Card bobMatch;
+    for(auto it = bob.rbegin(); it != bob.rend(); ++it)
+    {
+      if(alice.find(*it) != alice.end())
+      {
+        bobMatch = *it;
+        bobFound = true;
+        break;
+      }
+    }
+
+    if(!bobFound){break;}
+
+    cout << "Bob picked matching card " << bobMatch << endl;
+    alice.erase(bobMatch);
+    bob.erase(bobMatch);
+  }
+
+  // Print hands
+  cout << "Alice's cards:" << endl;
+  for(const auto& c : alice){cout << c << endl;}
+
+  cout << "Bob's cards:" << endl;
+  for(const auto& c : bob){cout << c << endl;}
   
   return 0;
 }

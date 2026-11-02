@@ -23,18 +23,21 @@ int main(int argv, char** argc){
     return 1;
   }
 
+  CardBST alice;
+  CardBST bob;
+
   //Read each file
   while (getline (cardFile1, line) && (line.length() > 0)){
-
+    alice.insert(Card(line));
   }
   cardFile1.close();
 
 
   while (getline (cardFile2, line) && (line.length() > 0)){
-
+    bob.insert(Card(line));
   }
   cardFile2.close();
   
-  
+  playGame(alice, bob);
   return 0;
 }
