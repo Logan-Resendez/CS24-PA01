@@ -258,7 +258,7 @@ void playGame(CardBST& alice, CardBST& bob)
     {
         cout << *it << endl;
     }
-
+    cout << endl;
     cout << "Bob's cards:" << endl;
     for(auto it = bob.begin(); it != bob.end(); ++it)
     {

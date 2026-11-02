@@ -81,7 +81,7 @@ int main(int argv, char** argc){
   // Print hands
   cout << "Alice's cards:" << endl;
   for(const auto& c : alice){cout << c << endl;}
-
+  cout << endl;
   cout << "Bob's cards:" << endl;
   for(const auto& c : bob){cout << c << endl;}
   
