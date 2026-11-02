@@ -77,7 +77,7 @@ int main(int argv, char** argc){
     alice.erase(bobMatch);
     bob.erase(bobMatch);
   }
-  cout << endl << endl;
+  cout << endl;
 
   // Print hands
   cout << "Alice's cards:" << endl;
