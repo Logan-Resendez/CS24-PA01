@@ -252,7 +252,7 @@ void playGame(CardBST& alice, CardBST& bob)
         alice.remove(bobMatch);
         bob.remove(bobMatch);
     }
-
+    cout << endl;
     cout << "Alice's cards:" << endl;
     for(auto it = alice.begin(); it != alice.end(); ++it)
     {
