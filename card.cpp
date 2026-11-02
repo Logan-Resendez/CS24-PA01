@@ -1,5 +1,5 @@
 // card.cpp
-// Authro: Logan Resendez
+// Author: Logan Resendez
 // Implementation of the classes defined in card.h
 
 #include "card.h"

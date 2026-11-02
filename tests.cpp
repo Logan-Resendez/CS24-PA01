@@ -218,6 +218,7 @@ int main()
     testCard();
     testBSTInsert();
     testBSTContains();
+    testBSTRemove();
     testPrintInOrder();
     testIterator();
     testPlayGame();
